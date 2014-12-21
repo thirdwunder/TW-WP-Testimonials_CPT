@@ -63,6 +63,7 @@ TW_Testimonials_Plugin()->register_post_type(
                         __( 'Testimonials CPT', 'tw-testimonials-plugin'),
                         array(
                           'menu_icon'=>plugins_url( 'assets/img/cpt-icon-testimonial.png', __FILE__ ),
+                          'rewrite' => array('slug' => 'testimonial'),
                         )
                     );
 
@@ -90,9 +91,9 @@ if (is_admin()){
 
   $testimonial_meta =  new AT_Meta_Box($testimonial_config);
 
-  $testimonial_meta->addText($prefix.'testimonial_source_title',  array('name'=> 'Source Title',        'desc'=>'Testimonial source\'s job title', 'group' => 'start'));
-  $testimonial_meta->addText($prefix.'testimonial_source_company',array('name'=> 'Source Company Name', 'desc'=>'Testimonial source Company name'));
-  $testimonial_meta->addText($prefix.'testimonial_source_url',    array('name'=> 'Source URL',          'desc'=>'Testimonial source website url. External links must include http://', 'group' => 'end'));
+  $testimonial_meta->addText($prefix.'testimonial_source_title',  array('name'=> 'Job Title',        'desc'=>'Testimonial source\'s job title', 'group' => 'start'));
+  $testimonial_meta->addText($prefix.'testimonial_source_company',array('name'=> 'Company Name', 'desc'=>'Testimonial source Company name'));
+  $testimonial_meta->addText($prefix.'testimonial_source_url',    array('name'=> 'Website URL',          'desc'=>'Testimonial source website url. External links must include http://', 'group' => 'end'));
 
   $testimonial_meta->Finish();
 }
