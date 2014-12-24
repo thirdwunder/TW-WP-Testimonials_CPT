@@ -113,114 +113,49 @@ class TW_Testimonials_Plugin_Settings {
 			'fields'				=> array(
   			array(
 					'id' 			=> 'tw_testimonial_category',
-					'label'			=> __( 'Enable Categories', 'tw-testimonials-plugin' ),
+					'label'			=> __( 'Categories', 'tw-testimonials-plugin' ),
 					'description'	=> __( 'Enable Testimonial categories', 'tw-testimonials-plugin' ),
 					'type'			=> 'checkbox',
 					'default'		=> ''
 				),
 				array(
 					'id' 			=> 'tw_testimonial_tag',
-					'label'			=> __( 'Enable Tags', 'tw-testimonials-plugin' ),
+					'label'			=> __( 'Tags', 'tw-testimonials-plugin' ),
 					'description'	=> __( 'Enable Testimonial tags', 'tw-testimonials-plugin' ),
 					'type'			=> 'checkbox',
 					'default'		=> ''
 				),
-//				array(
-//					'id' 			=> 'text_field',
-//					'label'			=> __( 'Some Text' , 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'This is a standard text field.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'text',
-//					'default'		=> '',
-//					'placeholder'	=> __( 'Placeholder text', 'tw-testimonials-plugin' )
-//				),
-//				array(
-//					'id' 			=> 'password_field',
-//					'label'			=> __( 'A Password' , 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'This is a standard password field.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'password',
-//					'default'		=> '',
-//					'placeholder'	=> __( 'Placeholder text', 'tw-testimonials-plugin' )
-//				),
-//				array(
-//					'id' 			=> 'secret_text_field',
-//					'label'			=> __( 'Some Secret Text' , 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'This is a secret text field - any data saved here will not be displayed after the page has reloaded, but it will be saved.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'text_secret',
-//					'default'		=> '',
-//					'placeholder'	=> __( 'Placeholder text', 'tw-testimonials-plugin' )
-//				),
-//				array(
-//					'id' 			=> 'text_block',
-//					'label'			=> __( 'A Text Block' , 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'This is a standard text area.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'textarea',
-//					'default'		=> '',
-//					'placeholder'	=> __( 'Placeholder text for this textarea', 'tw-testimonials-plugin' )
-//				),
-//				array(
-//					'id' 			=> 'select_box',
-//					'label'			=> __( 'A Select Box', 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'A standard select box.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'select',
-//					'options'		=> array( 'drupal' => 'Drupal', 'joomla' => 'Joomla', 'wordpress' => 'WordPress' ),
-//					'default'		=> 'wordpress'
-//				),
-//				array(
-//					'id' 			=> 'radio_buttons',
-//					'label'			=> __( 'Some Options', 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'A standard set of radio buttons.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'radio',
-//					'options'		=> array( 'superman' => 'Superman', 'batman' => 'Batman', 'ironman' => 'Iron Man' ),
-//					'default'		=> 'batman'
-//				),
-//				array(
-//					'id' 			=> 'multiple_checkboxes',
-//					'label'			=> __( 'Some Items', 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'You can select multiple items and they will be stored as an array.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'checkbox_multi',
-//					'options'		=> array( 'square' => 'Square', 'circle' => 'Circle', 'rectangle' => 'Rectangle', 'triangle' => 'Triangle' ),
-//					'default'		=> array( 'circle', 'triangle' )
-//				)
 			)
 		);
 
-//		$settings['extra'] = array(
-//			'title'					=> __( 'Extra', 'tw-testimonials-plugin' ),
-//			'description'			=> __( 'These are some extra input fields that maybe aren\'t as common as the others.', 'tw-testimonials-plugin' ),
-//			'fields'				=> array(
-//				array(
-//					'id' 			=> 'number_field',
-//					'label'			=> __( 'A Number' , 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'This is a standard number field - if this field contains anything other than numbers then the form will not be submitted.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'number',
-//					'default'		=> '',
-//					'placeholder'	=> __( '42', 'tw-testimonials-plugin' )
-//				),
-//				array(
-//					'id' 			=> 'colour_picker',
-//					'label'			=> __( 'Pick a colour', 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'This uses WordPress\' built-in colour picker - the option is stored as the colour\'s hex code.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'color',
-//					'default'		=> '#21759B'
-//				),
-//				array(
-//					'id' 			=> 'an_image',
-//					'label'			=> __( 'An Image' , 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'This will upload an image to your media library and store the attachment ID in the option field. Once you have uploaded an imge the thumbnail will display above these buttons.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'image',
-//					'default'		=> '',
-//					'placeholder'	=> ''
-//				),
-//				array(
-//					'id' 			=> 'multi_select_box',
-//					'label'			=> __( 'A Multi-Select Box', 'tw-testimonials-plugin' ),
-//					'description'	=> __( 'A standard multi-select box - the saved data is stored as an array.', 'tw-testimonials-plugin' ),
-//					'type'			=> 'select_multi',
-//					'options'		=> array( 'linux' => 'Linux', 'mac' => 'Mac', 'windows' => 'Windows' ),
-//					'default'		=> array( 'linux' )
-//				)
-//			)
-//		);
+    $settings['advanced'] = array(
+			'title'					=> __( 'Advanced', 'tw-testimonials-plugin' ),
+			'description'			=> __( 'Third Wunder Testimonials plugin advanced settings.', 'tw-testimonials-plugin' ),
+			'fields'				=> array(
+				array(
+					'id' 			=> 'tw_testimonial_slug',
+					'label'			=> __( 'Slug', 'tw-testimonials-plugin' ),
+					'description'	=> __( 'Testimonials custom post type slug', 'tw-testimonials-plugin' ),
+					'type'			=> 'text',
+					'default'		=> 'testimonial',
+					'placeholder' => 'testimonial',
+				),
+				array(
+					'id' 			=> 'tw_testimonial_search',
+					'label'			=> __( 'Exclude from Search', 'tw-testimonials-plugin' ),
+					'description'	=> __( 'Hide Testimonial items from search results', 'tw-testimonials-plugin' ),
+					'type'			=> 'checkbox',
+					'default'		=> ''
+				),
+				array(
+					'id' 			=> 'tw_testimonial_archive',
+					'label'			=> __( 'Has Archive', 'tw-projects-plugin' ),
+					'description'	=> __( 'Enable an archive page for Testimonials custom post type', 'tw-testimonials-plugin' ),
+					'type'			=> 'checkbox',
+					'default'		=> ''
+				),
+			)
+		);
 
 		$settings = apply_filters( $this->parent->_token . '_settings_fields', $settings );
 

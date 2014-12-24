@@ -49,7 +49,10 @@ function TW_Testimonials_Plugin () {
 }
 
 TW_Testimonials_Plugin();
-$prefix = 'tw_';
+
+$testimonial_slug = get_option('wpt_tw_testimonial_slug') ? get_option('wpt_tw_testimonial_slug') : "faq";
+$testimonial_search = get_option('wpt_tw_testimonial_search') ? true : false;
+$testimonial_archive = get_option('wpt_tw_testimonial_archive') ? true : false;
 
 $testimonial_category = get_option('wpt_tw_testimonial_category') ? get_option('wpt_tw_testimonial_category') : "off";
 $testimoinal_tag      = get_option('wpt_tw_testimonial_tag') ? get_option('wpt_tw_testimonial_tag') : "off";
@@ -63,7 +66,9 @@ TW_Testimonials_Plugin()->register_post_type(
                         __( 'Testimonials CPT', 'tw-testimonials-plugin'),
                         array(
                           'menu_icon'=>plugins_url( 'assets/img/cpt-icon-testimonial.png', __FILE__ ),
-                          'rewrite' => array('slug' => 'testimonial'),
+                          'rewrite' => array('slug' => $testimonial_slug),
+                          'exclude_from_search' => $testimonial_search,
+                          'has_archive'     => $testimonial_archive,
                         )
                     );
 
@@ -91,9 +96,9 @@ if (is_admin()){
 
   $testimonial_meta =  new AT_Meta_Box($testimonial_config);
 
-  $testimonial_meta->addText($prefix.'testimonial_source_title',  array('name'=> 'Job Title',        'desc'=>'Testimonial source\'s job title', 'group' => 'start'));
-  $testimonial_meta->addText($prefix.'testimonial_source_company',array('name'=> 'Company Name', 'desc'=>'Testimonial source Company name'));
-  $testimonial_meta->addText($prefix.'testimonial_source_url',    array('name'=> 'Website URL',          'desc'=>'Testimonial source website url. External links must include http://', 'group' => 'end'));
+  $testimonial_meta->addText('tw_testimonial_source_title',  array('name'=> 'Job Title',        'desc'=>'Testimonial source\'s job title', 'group' => 'start'));
+  $testimonial_meta->addText('tw_testimonial_source_company',array('name'=> 'Company Name', 'desc'=>'Testimonial source Company name'));
+  $testimonial_meta->addText('tw_testimonial_source_url',    array('name'=> 'Website URL',          'desc'=>'Testimonial source website url. External links must include http://', 'group' => 'end'));
 
   $testimonial_meta->Finish();
 }
