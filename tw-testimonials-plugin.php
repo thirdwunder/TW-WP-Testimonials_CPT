@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 // Load plugin class files
 require_once( 'includes/class-tw-testimonials-plugin.php' );
 require_once( 'includes/class-tw-testimonials-plugin-settings.php' );
+require_once( 'includes/class-tw-testimonials-plugin-widgets.php' );
 
 // Load plugin libraries
 require_once( 'includes/lib/class-tw-testimonials-plugin-admin-api.php' );
@@ -54,8 +55,8 @@ $testimonial_slug = get_option('wpt_tw_testimonial_slug') ? get_option('wpt_tw_t
 $testimonial_search = get_option('wpt_tw_testimonial_search') ? true : false;
 $testimonial_archive = get_option('wpt_tw_testimonial_archive') ? true : false;
 
-$testimonial_category = get_option('wpt_tw_testimonial_category') ? get_option('wpt_tw_testimonial_category') : "off";
-$testimoinal_tag      = get_option('wpt_tw_testimonial_tag') ? get_option('wpt_tw_testimonial_tag') : "off";
+$testimonial_category = get_option('wpt_tw_testimonial_category')=='on' ? true : false;
+$testimoinal_tag      = get_option('wpt_tw_testimonial_tag')=='on' ? true : false;
 
 
 
@@ -72,11 +73,11 @@ TW_Testimonials_Plugin()->register_post_type(
                         )
                     );
 
-if($testimonial_category=='on'){
+if($testimonial_category){
   TW_Testimonials_Plugin()->register_taxonomy( 'tw_testimonial_category', __( 'Testimonial Categories', 'tw-testimonials-plugin' ), __( 'Testimonial Category', 'tw' ), 'tw_testimonial', array('hierarchical'=>true) );
 }
 
-if($testimoinal_tag=='on'){
+if($testimoinal_tag){
  TW_Testimonials_Plugin()->register_taxonomy( 'tw_testimonial_tag', __( 'Testimonial Tags', 'tw-testimonials-plugin' ), __( 'Testimonial Tag', 'tw-testimonials-plugin' ), 'tw_testimonial', array('hierarchical'=>false) );
 }
 
